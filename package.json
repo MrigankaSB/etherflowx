@@ -1,17 +1,25 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
-
-const { PRIVATE_KEY, RPC_URL } = process.env;
-
-module.exports = {
-  solidity: "0.8.20",
-  networks: {
-    sepolia: {
-      url: RPC_URL || "",
-      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
-    },
+{
+  "name": "EtherFlowX",
+  "version": "1.0.0",
+  "description": "A simple smart contract for secure Ether deposits and withdrawals built using Hardhat.",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js --network sepolia"
   },
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
-  },
-};
+  "keywords": [
+    "solidity",
+    "hardhat",
+    "blockchain",
+    "ether",
+    "smart-contract"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.1"
+  }
+}
